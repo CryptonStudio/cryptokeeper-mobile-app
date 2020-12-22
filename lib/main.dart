@@ -1,7 +1,5 @@
-import 'package:ck_login/PIN_code_page/PIN_code_page.dart';
 import 'package:ck_login/constants.dart';
 import 'package:ck_login/home_page/home_page.dart';
-import 'package:ck_login/login_page/login_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,6 +16,20 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Inter',
         scaffoldBackgroundColor: CustomColors.scaffoldBackgroundColor,
         primaryColorBrightness: Brightness.light,
+
+
+
+        tabBarTheme: TabBarTheme(
+          labelColor: CustomColors.white,
+          labelStyle:
+          TextStyle(fontSize: 16),
+          unselectedLabelColor: CustomColors.white.withOpacity(0.55),
+
+          unselectedLabelStyle:
+          TextStyle(fontSize: 16),
+          indicatorSize: TabBarIndicatorSize.label,
+          indicator: BoxDecoration(border: Border()),
+        ),
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );

@@ -10,6 +10,8 @@ class CustomColors {
   static const Color disabledTextColor = Color(0xFF7C7C85);
   static const Color disabledButtonBackGroundColor = Color(0xFF3F3F4B);
   static const Color scaffoldBackgroundColor = Color(0xFF212129);
+  static const Color acceptedColor = Color(0xFF28C642);
+  static const Color declinedColor = Color(0xFFEA3147);
 }
 
 class LangKeys {
