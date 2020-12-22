@@ -1,7 +1,8 @@
 import 'package:ck_login/response_models/home_response.dart';
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../../constants.dart';
+
 
 class AllPage extends StatefulWidget {
   @override

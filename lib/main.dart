@@ -1,6 +1,7 @@
 import 'package:ck_login/constants.dart';
-import 'package:ck_login/home_page/home_page.dart';
 import 'package:flutter/material.dart';
+
+import 'UI/settings_page/settings_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,8 +17,6 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Inter',
         scaffoldBackgroundColor: CustomColors.scaffoldBackgroundColor,
         primaryColorBrightness: Brightness.light,
-
-
 
         tabBarTheme: TabBarTheme(
           labelColor: CustomColors.white,
@@ -47,6 +46,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Homepage() ;
+    return SettingsPage() ;
   }
 }

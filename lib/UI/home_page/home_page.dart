@@ -1,7 +1,7 @@
-import 'package:ck_login/accepted_page/accepted_page.dart';
-import 'package:ck_login/all_page/all_page.dart';
+import 'package:ck_login/UI/accepted_page/accepted_page.dart';
+import 'package:ck_login/UI/all_page/all_page.dart';
+import 'package:ck_login/UI/declined_page/declined_page.dart';
 import 'package:ck_login/constants.dart';
-import 'package:ck_login/declined_page/declined_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -65,9 +65,10 @@ class _HomepageState extends State<Homepage>
                 child: TabBar(
                   indicatorSize: TabBarIndicatorSize.tab,
                   indicator: BoxDecoration(
-                      color: Color(0xFF212129),
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: Color(0xFF385AD3), width: 3)),
+                    color: Color(0xFF212129),
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: Color(0xFF385AD3), width: 3),
+                  ),
                   tabs: [
                     Tab(
                       child: Text("All"),

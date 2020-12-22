@@ -2,8 +2,6 @@ import 'package:ck_login/response_models/accepted_response.dart';
 import 'package:ck_login/widgets/accepted_box.dart';
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
-
 class AcceptedPage extends StatefulWidget {
   @override
   _AcceptedPageState createState() => _AcceptedPageState();
