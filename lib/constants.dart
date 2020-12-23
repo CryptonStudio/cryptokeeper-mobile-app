@@ -12,9 +12,14 @@ class CustomColors {
   static const Color scaffoldBackgroundColor = Color(0xFF212129);
   static const Color acceptedColor = Color(0xFF28C642);
   static const Color declinedColor = Color(0xFFEA3147);
+  static const Color transactionsDetailsText = Color(0xFFBFBFC4);
 }
 
 class LangKeys {
   static const String sign_up = "Sign up";
   static const String sign_in = "Sign in";
+  static const String enter_pin_code = "Enter PIN code";
+  static const String all = "All";
+  static const String accepted = "Accepted";
+  static const String declined = "Declined";
 }
