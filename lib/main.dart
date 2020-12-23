@@ -1,3 +1,7 @@
+import 'package:ck_login/UI/PIN_code_page/PIN_code_page.dart';
+import 'package:ck_login/UI/home_page/home_page.dart';
+import 'package:ck_login/UI/login_page/login_page.dart';
+import 'package:ck_login/UI/transaction_details_page/transaction_details_page.dart';
 import 'package:ck_login/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -46,6 +50,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return SettingsPage() ;
+    return TransactionDetails() ;
   }
 }

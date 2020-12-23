@@ -12,30 +12,28 @@ class _AcceptedPageState extends State<AcceptedPage> {
   Widget build(BuildContext context) {
     AcceptedResponse response = new AcceptedResponse(true, "21B1280F...E8AE6",
         "0.25634789 BTC", "1 week ago (Nov 26, 2020, 4:13 PM)");
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          AcceptedBox(
-            response: response,
-          ),AcceptedBox(
-            response: response,
-          ),AcceptedBox(
-            response: response,
-          ),AcceptedBox(
-            response: response,
-          ),AcceptedBox(
-            response: response,
-          ),AcceptedBox(
-            response: response,
-          ),AcceptedBox(
-            response: response,
-          ),AcceptedBox(
-            response: response,
-          ),AcceptedBox(
-            response: response,
-          )
-        ],
-      ),
+    return ListView(
+      children: [
+        AcceptedBox(
+          response: response,
+        ),AcceptedBox(
+          response: response,
+        ),AcceptedBox(
+          response: response,
+        ),AcceptedBox(
+          response: response,
+        ),AcceptedBox(
+          response: response,
+        ),AcceptedBox(
+          response: response,
+        ),AcceptedBox(
+          response: response,
+        ),AcceptedBox(
+          response: response,
+        ),AcceptedBox(
+          response: response,
+        )
+      ],
     );
   }
 }

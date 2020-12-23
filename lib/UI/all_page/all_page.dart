@@ -3,50 +3,56 @@ import 'package:flutter/material.dart';
 
 import '../../constants.dart';
 
-
 class AllPage extends StatefulWidget {
   @override
   _AllPageState createState() => _AllPageState();
 }
 
 class _AllPageState extends State<AllPage> {
+  // List<HomeResponse> responsesList = [
+  //   HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
+  //   HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
+  //   HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
+  //   HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
+  //   HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
+  //   HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34")
+  // ];
+
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          box(
-            HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
-          ),
-          box(
-            HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
-          ),
-          box(
-            HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
-          ),
-          box(
-            HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
-          ),
-          box(
-            HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
-          ),
-          box(
-            HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
-          ),
-          box(
-            HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
-          ),
-          box(
-            HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
-          ),
-          box(
-            HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
-          ),
-          box(
-            HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
-          ),
-        ],
-      ),
+    return ListView(
+      children: [
+        box(
+          HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
+        ),
+        box(
+          HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
+        ),
+        box(
+          HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
+        ),
+        box(
+          HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
+        ),
+        box(
+          HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
+        ),
+        box(
+          HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
+        ),
+        box(
+          HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
+        ),
+        box(
+          HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
+        ),
+        box(
+          HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
+        ),
+        box(
+          HomeResponse("RB3A5YQN45YHS45NY4S6UY", "0.25634789 BTC", "124.34"),
+        ),
+      ],
     );
   }
 

@@ -12,7 +12,7 @@ class _PinCodePageState extends State<PinCodePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.end ,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           SvgPicture.asset(
             "assets/svg/promo.svg",
@@ -21,9 +21,9 @@ class _PinCodePageState extends State<PinCodePage> {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 24,bottom: 24),
+                  padding: const EdgeInsets.only(top: 24, bottom: 24),
                   child: Text(
-                    "Enter PIN code",
+                    LangKeys.enter_pin_code,
                     style: TextStyle(
                       fontSize: 16,
                       color: Color(0xFF9D9DA6),
@@ -35,10 +35,8 @@ class _PinCodePageState extends State<PinCodePage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      dot(),
-                      dot(),
-                      dot(),
-                      dot(),
+                      for (int i = 0; i < PIN_CODE_LENGTH; i++)
+                          dot(),
                     ],
                   ),
                 )
@@ -114,9 +112,23 @@ Widget dot() {
       width: 10,
       height: 10,
       decoration: BoxDecoration(
-          color: CustomColors.buttonBackGroundColor,
-          shape: BoxShape.circle,
-          border: Border.all(width: 1, color: Color(0xFF052B43))),
+        color: CustomColors.buttonBackGroundColor,
+        shape: BoxShape.circle,
+      ),
+    ),
+  );
+}
+
+Widget emptyDot() {
+  return Padding(
+    padding: const EdgeInsets.all(5.0),
+    child: Container(
+      width: 10,
+      height: 10,
+      decoration: BoxDecoration(
+        color: CustomColors.disabledButtonBackGroundColor,
+        shape: BoxShape.circle,
+      ),
     ),
   );
 }

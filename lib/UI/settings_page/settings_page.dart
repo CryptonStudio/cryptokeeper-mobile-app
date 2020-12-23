@@ -64,7 +64,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         alignment: Alignment.centerRight,
                         child: Padding(
                           padding: const EdgeInsets.only(right: 30),
-                          child: SvgPicture.asset("assets/svg/arrow.svg"),
+                          child: SvgPicture.asset("assets/svg/arrow_right.svg"),
                         ),
                       ),
                     ),
@@ -101,7 +101,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         child: Padding(
                           padding: const EdgeInsets.only(right: 10),
                           child: SvgPicture.asset(
-                            "assets/svg/arrow.svg",
+                            "assets/svg/arrow_right.svg",
                             color: Color(0xFF3F3F4B),
                           ),
                         ),
@@ -177,7 +177,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         child: Padding(
                           padding: const EdgeInsets.only(right: 10),
                           child: SvgPicture.asset(
-                            "assets/svg/arrow.svg",
+                            "assets/svg/arrow_right.svg",
                             color: Color(0xFF3F3F4B),
                           ),
                         ),
