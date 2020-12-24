@@ -55,6 +55,7 @@ class InputForm extends TextFormField {
     TextInputType textInputType,
     FormFieldValidator<String> validator,
     List<TextInputFormatter> inputFormatters,
+    String hintText,
   }) {
     return InputForm(
       onChanged: onChanged,
@@ -63,6 +64,7 @@ class InputForm extends TextFormField {
       inputFormatters: inputFormatters,
       validator: validator,
       decoration: InputDecoration(
+        hintText: hintText,
         filled: true,
         fillColor: CustomColors.inputBackGroundColor,
         suffixIcon: suffixIcon,

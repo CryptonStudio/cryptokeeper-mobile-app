@@ -418,7 +418,6 @@ class TransactionDetails extends StatelessWidget {
                   ],
                 ),
               ),
-              filtration(),
             ],
           ),
         ),
@@ -431,12 +430,6 @@ class TransactionDetails extends StatelessWidget {
       height: 30,
       thickness: 1,
       color: CustomColors.inputBackGroundColor,
-    );
-  }
-
-  Widget filtration() {
-    return Column(
-      children: [],
     );
   }
 
