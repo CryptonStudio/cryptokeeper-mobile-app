@@ -1,4 +1,6 @@
 import 'package:ck_login/constants.dart';
+import 'package:ck_login/widgets/custom_button.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -9,86 +11,89 @@ class TransactionDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var padding = const EdgeInsets.only(left: 20, right: 20, top: 10);
     return Scaffold(
+      // appBar: CupertinoNavigationBar(),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Align(
-                    alignment: Alignment.centerLeft,
-                    child: SvgPicture.asset("assets/svg/arrow_left.svg")),
-                Expanded(
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      "Transaction details",
-                      style: TextStyle(color: CustomColors.white, fontSize: 17),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 35),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SvgPicture.asset("assets/svg/arrow_left.svg"),
+                    Expanded(
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "Transaction details",
+                          style: TextStyle(
+                              color: CustomColors.white, fontSize: 17),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Color(0xFF30303A),
+                    borderRadius: BorderRadius.circular(13),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 20),
+                          child: Text(
+                            "Amount",
+                            style: TextStyle(
+                                color: CustomColors.disabledTextColor,
+                                fontSize: 13),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 15),
+                          child: Text(
+                            "Dx38hf98n...23rf94",
+                            style: TextStyle(
+                                color: CustomColors.white, fontSize: 13),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 3),
+                          child: Text(
+                            "0.25634789 BTC",
+                            style: TextStyle(
+                              fontSize: 22,
+                              color: CustomColors.white,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 20, top: 3),
+                          child: Text(
+                            "\$ 123.43",
+                            style: TextStyle(
+                              fontSize: 13,
+                              color: CustomColors.disabledTextColor,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Color(0xFF30303A),
-                  borderRadius: BorderRadius.circular(13),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 20),
-                        child: Text(
-                          "Amount",
-                          style: TextStyle(
-                              color: CustomColors.disabledTextColor,
-                              fontSize: 13),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 15),
-                        child: Text(
-                          "Dx38hf98n...23rf94",
-                          style: TextStyle(
-                              color: CustomColors.white, fontSize: 13),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 3),
-                        child: Text(
-                          "0.25634789 BTC",
-                          style: TextStyle(
-                            fontSize: 22,
-                            color: CustomColors.white,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 20, top: 3),
-                        child: Text(
-                          "\$ 123.43",
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: CustomColors.disabledTextColor,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
+              Row(
                 children: [
                   Expanded(
                     child: Container(
@@ -279,8 +284,8 @@ class TransactionDetails extends StatelessWidget {
                                   ),
                                 ),
                                 Padding(
-                                  padding:
-                                      const EdgeInsets.only(top: 12, bottom: 24),
+                                  padding: const EdgeInsets.only(
+                                      top: 12, bottom: 24),
                                   child: Row(
                                     children: [
                                       Text(
@@ -313,10 +318,151 @@ class TransactionDetails extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 30,
+                  bottom: 15,
+                ),
+                child: Text(
+                  "Transaction sum",
+                  style: TextStyle(
+                    color: Color(0xFF7C7C85),
+                    fontSize: 13,
+                  ),
+                ),
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Text(
+                      "21B1280F42784423ADDC97988B809FE2B88E523D9790538E2335C0FBF25C8AE6",
+                      style: TextStyle(color: CustomColors.white),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15),
+                    child: CustomButton.colored(
+                        backgroundColor: CustomColors.buttonBackGroundColor,
+                        textColor: CustomColors.white,
+                        height: 35,
+                        width: 81,
+                        title: "Copy",
+                        // padding:
+                        //     EdgeInsets.symmetric(horizontal: 25, vertical: 5),
+                        onPress: () {
+                          print("copy pressed");
+                        }),
+                  )
+                ],
+              ),
+              customDivider(),
+              Text(
+                "Creation date",
+                style: TextStyle(color: CustomColors.disabledTextColor),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 15),
+                child: Row(
+                  children: [
+                    Text(
+                      "2 weeks ago",
+                      style: TextStyle(color: CustomColors.white, fontSize: 17),
+                    ),
+                    Expanded(
+                      child: Align(
+                        alignment: Alignment.centerRight,
+                        child: Text(
+                          "Nov 26, 2020, 4:13 PM",
+                          style:
+                              TextStyle(color: Color(0xFf62626D), fontSize: 11),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              customDivider(),
+              labelAndText("To", "dx1dj0j2ze23pyayt79ae4swnr9s86rvphsnhnsj6"),
+              customDivider(),
+              labelAndText("From", "dx1dj0j2ze23pyayt79ae4swnr9s86rvphsnhnsj6"),
+              customDivider(),
+              labelAndText("Validator Address",
+                  "dx1dj0j2ze23pyayt79ae4swnr9s86rvphsnhnsj6"),
+              Padding(
+                padding: const EdgeInsets.only(top: 50, bottom: 15),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: CustomButton.colored(
+                        title: "Decline",
+                        onPress: () {},
+                        textColor: CustomColors.declinedColor,
+                        backgroundColor:
+                            CustomColors.declinedColor.withOpacity(0.2),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    Expanded(
+                      child: CustomButton.colored(
+                        title: "Accept",
+                        onPress: () {},
+                        textColor: CustomColors.acceptedColor,
+                        backgroundColor:
+                            CustomColors.acceptedColor.withOpacity(0.2),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              filtration(),
+            ],
+          ),
         ),
       ),
+    );
+  }
+
+  Widget customDivider() {
+    return Divider(
+      height: 30,
+      thickness: 1,
+      color: CustomColors.inputBackGroundColor,
+    );
+  }
+
+  Widget filtration() {
+    return Column(
+      children: [],
+    );
+  }
+
+  Widget labelAndText(String labelText, String info) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          labelText,
+          style: TextStyle(
+            color: CustomColors.disabledTextColor,
+            fontSize: 13,
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 15),
+          child: Text(
+            info,
+            style: TextStyle(
+              color: CustomColors.white,
+              fontSize: 17,
+            ),
+          ),
+        )
+      ],
     );
   }
 }

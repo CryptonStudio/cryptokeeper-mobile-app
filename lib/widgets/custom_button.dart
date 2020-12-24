@@ -7,10 +7,12 @@ class CustomButton extends StatelessWidget {
   final double width;
   final bool isLoading;
   final EdgeInsets padding;
+  final double height;
 
   final _ButtonStyle _style;
 
   const CustomButton([
+    this.height,
     this.title,
     this.onPress,
     this.width,
@@ -26,14 +28,14 @@ class CustomButton extends StatelessWidget {
       onPressed: isLoading ? null : onPress,
       child: AnimatedContainer(
         duration: Duration(milliseconds: 200),
-        height: 54,
+        height: height ?? 54,
         width: width,
         padding: padding,
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: onPress == null ? _style.disabledBgColor : _style.bgColor,
           border: _style.border,
-          borderRadius: BorderRadius.circular(13),
+          borderRadius: _style.borderRadius ?? BorderRadius.circular(13),
         ),
         child: isLoading
             ? CupertinoActivityIndicator()
@@ -59,8 +61,10 @@ class CustomButton extends StatelessWidget {
     EdgeInsets padding: EdgeInsets.zero,
     double width,
     bool isLoading = false,
+    double height,
   }) {
     return CustomButton(
+      height,
       title,
       onPress,
       width,
@@ -74,14 +78,43 @@ class CustomButton extends StatelessWidget {
     );
   }
 
+  factory CustomButton.colored({
+    @required String title,
+    @required Function onPress,
+    EdgeInsets padding: EdgeInsets.zero,
+    double width,
+    double height,
+    bool isLoading = false,
+    Color textColor,
+    Color backgroundColor,
+  }) {
+    return CustomButton(
+      height,
+      title,
+      onPress,
+      width,
+      isLoading,
+      padding,
+      _ButtonStyle(
+          borderRadius: BorderRadius.circular(8),
+          bgColor:
+              backgroundColor ?? CustomColors.disabledButtonBackGroundColor,
+          textColor: textColor ?? CustomColors.disabledTextColor,
+          disabledBgColor: CustomColors.disabledButtonBackGroundColor,
+          disabledTextColor: CustomColors.disabledTextColor),
+    );
+  }
+
   factory CustomButton.secondary({
     @required String title,
     @required Function onPress,
     EdgeInsets padding: EdgeInsets.zero,
     double width,
+    double height,
     bool isLoading = false,
   }) {
     return CustomButton(
+      height,
       title,
       onPress,
       width,
@@ -90,8 +123,13 @@ class CustomButton extends StatelessWidget {
       _ButtonStyle(
         border: onPress == null
             ? Border.all(
-                width: 1, color: CustomColors.disabledButtonBackGroundColor)
-            : Border.all(width: 1, color: CustomColors.buttonBackGroundColor),
+                width: 1,
+                color: CustomColors.disabledButtonBackGroundColor,
+              )
+            : Border.all(
+                width: 1,
+                color: CustomColors.buttonBackGroundColor,
+              ),
         textColor: CustomColors.white,
         disabledTextColor: CustomColors.disabledTextColor,
       ),
@@ -107,6 +145,7 @@ class _ButtonStyle {
   final FontWeight fontWeight;
   final Border border;
   final TextDecoration textDecoration;
+  final BorderRadius borderRadius;
 
   _ButtonStyle({
     this.border,
@@ -116,5 +155,6 @@ class _ButtonStyle {
     this.fontWeight,
     this.bgColor,
     this.textDecoration,
+    this.borderRadius,
   });
 }
