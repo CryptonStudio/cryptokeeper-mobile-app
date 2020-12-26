@@ -2,8 +2,10 @@ import 'package:ck_login/UI/accepted_page/accepted_page.dart';
 import 'package:ck_login/UI/all_page/all_page.dart';
 import 'package:ck_login/UI/declined_page/declined_page.dart';
 import 'package:ck_login/constants.dart';
+import 'package:ck_login/widgets/input_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -38,7 +40,7 @@ class _HomepageState extends State<Homepage>
     ),
     Tab(
       child: Text(LangKeys.declined),
-    )
+    ),
   ];
 
   @override
@@ -49,6 +51,8 @@ class _HomepageState extends State<Homepage>
         headerSliverBuilder: (BuildContext context, bool boxIsScrolled) {
           return <Widget>[
             SliverAppBar(
+              leading: null,
+              titleSpacing: 0,
               pinned: false,
               floating: true,
               snap: true,
@@ -59,7 +63,7 @@ class _HomepageState extends State<Homepage>
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(top: 30),
+                    padding: const EdgeInsets.only(top: 0),
                     child: Text(
                       "Home",
                       style: TextStyle(
@@ -71,7 +75,14 @@ class _HomepageState extends State<Homepage>
                   Expanded(
                     child: Align(
                       alignment: Alignment.bottomRight,
-                      child: SvgPicture.asset("assets/svg/setting.svg"),
+                      child: GestureDetector(
+                          onTap: () => showCupertinoModalBottomSheet(
+                                duration: Duration(milliseconds: 300),
+                                expand: true,
+                                context: context,
+                                builder: (context) => myBar(),
+                              ),
+                          child: SvgPicture.asset("assets/svg/setting.svg")),
                     ),
                   ),
                 ],
@@ -89,7 +100,7 @@ class _HomepageState extends State<Homepage>
                 ),
                 tabs: tabs,
               ),
-            )
+            ),
           ];
         },
         body: TabBarView(
