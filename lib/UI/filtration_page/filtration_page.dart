@@ -48,7 +48,6 @@ class _FiltrationPageState extends State<FiltrationPage> {
   }
 
   Widget myBar() {
-
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),

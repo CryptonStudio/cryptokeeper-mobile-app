@@ -1,4 +1,6 @@
+import 'package:ck_login/UI/transaction_details_page/transaction_details_page.dart';
 import 'package:ck_login/response_models/home_response.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
@@ -58,39 +60,49 @@ class _AllPageState extends State<AllPage> {
 
   Widget box(HomeResponse response) {
     var padding = const EdgeInsets.only(left: 20, right: 20, top: 10);
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 7.5),
-      child: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: Color(0xFF30303A),
-          borderRadius: BorderRadius.circular(13),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: padding,
-              child: Text(
-                response.key,
-                style: TextStyle(color: CustomColors.white, fontSize: 13),
+    return GestureDetector(
+      onTap: (){
+        Navigator.push(
+          context,
+          CupertinoPageRoute(
+            builder: (context) => TransactionDetails(),
+          ),
+        );
+      },
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 7.5),
+        child: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: Color(0xFF30303A),
+            borderRadius: BorderRadius.circular(13),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: padding,
+                child: Text(
+                  response.key,
+                  style: TextStyle(color: CustomColors.white, fontSize: 13),
+                ),
               ),
-            ),
-            Padding(
-              padding: padding,
-              child: Text(
-                response.valueInCrypto,
-                style: TextStyle(color: CustomColors.white, fontSize: 22),
+              Padding(
+                padding: padding,
+                child: Text(
+                  response.valueInCrypto,
+                  style: TextStyle(color: CustomColors.white, fontSize: 22),
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, top: 10, bottom: 17.5),
-              child: Text(
-                "\$ " + response.valueInDollars,
-                style: TextStyle(color: Color(0xFF62626D), fontSize: 13),
+              Padding(
+                padding: const EdgeInsets.only(left: 20, top: 10, bottom: 17.5),
+                child: Text(
+                  "\$ " + response.valueInDollars,
+                  style: TextStyle(color: Color(0xFF62626D), fontSize: 13),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

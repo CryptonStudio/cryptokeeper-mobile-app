@@ -1,13 +1,14 @@
-import 'package:ck_login/constants.dart';
+import 'package:ck_login/response_models/transaction_detail_response.dart';
 import 'package:ck_login/widgets/custom_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 
-class TransactionDetails extends StatelessWidget {
-  //final TransactionsDetailsResponse response;
-  //
-  //const TransactionDetails({Key key}) : super(key: key);
+import '../../constants.dart';
+
+class TranActionsDetailsAccepted extends StatelessWidget {
+  final TransactionDetailsResponse response;
+
+  const TranActionsDetailsAccepted({Key key, this.response}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -332,11 +333,74 @@ class TransactionDetails extends StatelessWidget {
                   bottom: 15,
                 ),
                 child: Text(
-                  "Transaction sum",
+                  "Status",
                   style: TextStyle(
                     color: Color(0xFF7C7C85),
                     fontSize: 13,
                   ),
+                ),
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 8),
+                      child: Text(
+                        "2 weeks ago",
+                        style: TextStyle(color: CustomColors.white),
+                      ),
+                    ),
+                  ),
+                  response.accepted
+                      ? Container(
+                          width: 81,
+                          height: 30,
+                          decoration: BoxDecoration(
+                            color: CustomColors.acceptedColor.withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          alignment: Alignment.center,
+                          child: Text(
+                            "Accepted",
+                            style: TextStyle(
+                                color: CustomColors.acceptedColor,
+                                fontSize: 13),
+                          ),
+                        )
+                      : Container(
+                          width: 81,
+                          height: 30,
+                          decoration: BoxDecoration(
+                            color: CustomColors.declinedColor.withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          alignment: Alignment.center,
+                          child: Text(
+                            "Declined",
+                            style: TextStyle(
+                                color: CustomColors.declinedColor,
+                                fontSize: 13),
+                          ),
+                        )
+                ],
+              ),
+              customDivider(),
+              !response.accepted
+                  ? Column(
+                      children: [
+                        labelAndText("Decline reason",
+                            "Lorem ipsum dolor sit amet nut re kowuy defrato rox feratiq"),
+                        customDivider(),
+                      ],
+                    )
+                  : SizedBox.shrink(),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 15),
+                child: Text(
+                  "Transaction hash",
+                  style: TextStyle(color: CustomColors.disabledTextColor),
                 ),
               ),
               Row(
@@ -398,34 +462,9 @@ class TransactionDetails extends StatelessWidget {
               customDivider(),
               labelAndText("Validator Address",
                   "dx1dj0j2ze23pyayt79ae4swnr9s86rvphsnhnsj6"),
-              Padding(
-                padding: const EdgeInsets.only(top: 50, bottom: 15),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: CustomButton.colored(
-                        title: "Decline",
-                        onPress: () {},
-                        textColor: CustomColors.declinedColor,
-                        backgroundColor:
-                            CustomColors.declinedColor.withOpacity(0.2),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 15,
-                    ),
-                    Expanded(
-                      child: CustomButton.colored(
-                        title: "Accept",
-                        onPress: () {},
-                        textColor: CustomColors.acceptedColor,
-                        backgroundColor:
-                            CustomColors.acceptedColor.withOpacity(0.2),
-                      ),
-                    )
-                  ],
-                ),
-              ),
+              SizedBox(
+                height: 15,
+              )
             ],
           ),
         ),
@@ -435,7 +474,7 @@ class TransactionDetails extends StatelessWidget {
 
   Widget customDivider() {
     return Divider(
-      height: 30,
+      height: 35,
       thickness: 1,
       color: CustomColors.inputBackGroundColor,
     );

@@ -1,8 +1,10 @@
+import 'package:ck_login/UI/PIN_code_page/PIN_code_page.dart';
 import 'package:ck_login/constants.dart';
 import 'package:ck_login/widgets/custom_button.dart';
 import 'package:ck_login/widgets/input_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -21,7 +23,9 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Spacer(flex: 3,),
+                Spacer(
+                  flex: 3,
+                ),
                 Padding(
                   padding: const EdgeInsets.only(left: 20),
                   child: SvgPicture.asset(
@@ -74,13 +78,18 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Spacer(),
                 Padding(
-                  padding:
-                  const EdgeInsets.only(top: 30, left: 20, right: 20),
+                  padding: const EdgeInsets.only(top: 30, left: 20, right: 20),
                   child: CustomButton.primary(
                       title: LangKeys.sign_in,
                       width: double.infinity,
                       onPress: () {
                         print("done");
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => PinCodePage(),
+                          ),
+                        );
                       }),
                 ),
                 Padding(
