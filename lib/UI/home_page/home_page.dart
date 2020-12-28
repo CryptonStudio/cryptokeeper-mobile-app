@@ -50,55 +50,63 @@ class _HomepageState extends State<Homepage>
         controller: _scrollViewController,
         headerSliverBuilder: (BuildContext context, bool boxIsScrolled) {
           return <Widget>[
-            SliverAppBar(
-              leading: null,
-              titleSpacing: 0,
-              pinned: false,
-              floating: true,
-              snap: true,
-              backgroundColor: CustomColors.scaffoldBackgroundColor,
-              forceElevated: boxIsScrolled,
-              title: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 0),
-                    child: Text(
-                      "Home",
-                      style: TextStyle(
-                        color: CustomColors.white,
-                        fontSize: 34,
+            SliverPadding(
+              padding:
+                  const EdgeInsets.only(left: 26, right: 26, bottom: 0, top: 5),
+              sliver: SliverAppBar(
+                leading: null,
+                titleSpacing: 0,
+                pinned: false,
+                floating: true,
+                snap: true,
+                backgroundColor: CustomColors.scaffoldBackgroundColor,
+                forceElevated: boxIsScrolled,
+                title: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 40, bottom: 20),
+                      child: Text(
+                        "Home",
+                        style: TextStyle(
+                          color: CustomColors.white,
+                          fontSize: 34,
+                        ),
                       ),
                     ),
-                  ),
-                  Expanded(
-                    child: Align(
-                      alignment: Alignment.bottomRight,
-                      child: GestureDetector(
+                    Expanded(
+                      child: Align(
+                        alignment: Alignment.bottomRight,
+                        child: GestureDetector(
                           onTap: () => showCupertinoModalBottomSheet(
-                                duration: Duration(milliseconds: 300),
-                                expand: true,
-                                context: context,
-                                builder: (context) => myBar(),
-                              ),
-                          child: SvgPicture.asset("assets/svg/setting.svg")),
+                            duration: Duration(milliseconds: 300),
+                            expand: true,
+                            context: context,
+                            builder: (context) => myBar(),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.only(right: 0, top: 30),
+                            child: SvgPicture.asset("assets/svg/setting.svg"),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                bottom: TabBar(
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  controller: tabController,
+                  indicator: BoxDecoration(
+                    color: CustomColors.scaffoldBackgroundColor,
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(
+                      color: Color(0xFF385AD3),
+                      width: 3,
                     ),
                   ),
-                ],
-              ),
-              bottom: TabBar(
-                indicatorSize: TabBarIndicatorSize.tab,
-                controller: tabController,
-                indicator: BoxDecoration(
-                  color: CustomColors.scaffoldBackgroundColor,
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(
-                    color: Color(0xFF385AD3),
-                    width: 3,
-                  ),
+                  tabs: tabs,
                 ),
-                tabs: tabs,
               ),
             ),
           ];
