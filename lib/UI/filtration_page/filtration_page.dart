@@ -1,6 +1,6 @@
 import 'package:ck_login/constants.dart';
-import 'package:ck_login/widgets/custom_button.dart';
-import 'package:ck_login/widgets/input_form.dart';
+import 'package:ck_login/UI/widgets/custom_button.dart';
+import 'package:ck_login/UI/widgets/input_form.dart';
 import 'package:flutter/material.dart';
 
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
@@ -81,12 +81,20 @@ class _FiltrationPageState extends State<FiltrationPage> {
                 ),
                 Expanded(
                   child: GestureDetector(
-                    child: Text(
-                      "Close",
-                      textAlign: TextAlign.right,
-                      style: TextStyle(
-                        color: CustomColors.buttonBackGroundColor,
-                        fontSize: 17,
+                    onTap:(){
+                      Navigator.of(context).pop();
+                    } ,
+                    child: Container(
+                      width: 50,
+                      height: 50,
+                      color: CustomColors.white,
+                      child: Text(
+                        "Close",
+                        textAlign: TextAlign.right,
+                        style: TextStyle(
+                          color: CustomColors.white,
+                          fontSize: 17,
+                        ),
                       ),
                     ),
                   ),

@@ -31,6 +31,7 @@ dependencies:
   flutter_svg: ^0.18.0
   modal_bottom_sheet: ^1.0.0+1
   flutter_slidable: ^0.5.7
+  flutter_secure_storage: ^3.3.5
 
 dev_dependencies:
   flutter_test:

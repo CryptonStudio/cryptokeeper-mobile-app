@@ -4,7 +4,8 @@ import 'package:ck_login/response_models/transaction_detail_response.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../../constants.dart';
+
 
 class AcceptedBox extends StatelessWidget {
   final AcceptedResponse response;

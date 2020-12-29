@@ -1,5 +1,5 @@
 import 'package:ck_login/constants.dart';
-import 'package:ck_login/widgets/custom_button.dart';
+import 'package:ck_login/UI/widgets/custom_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

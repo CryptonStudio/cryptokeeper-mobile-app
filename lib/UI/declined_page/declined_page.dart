@@ -1,5 +1,5 @@
 import 'package:ck_login/response_models/accepted_response.dart';
-import 'package:ck_login/widgets/accepted_box.dart';
+import 'package:ck_login/UI/widgets/accepted_box.dart';
 import 'package:flutter/material.dart';
 
 class DecLinedPage extends StatefulWidget {

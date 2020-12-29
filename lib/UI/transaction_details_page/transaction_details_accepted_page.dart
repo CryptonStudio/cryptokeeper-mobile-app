@@ -1,5 +1,5 @@
 import 'package:ck_login/response_models/transaction_detail_response.dart';
-import 'package:ck_login/widgets/custom_button.dart';
+import 'package:ck_login/UI/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

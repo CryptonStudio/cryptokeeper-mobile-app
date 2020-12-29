@@ -128,6 +128,7 @@ class _AllPageState extends State<AllPage> {
                   ),
                 ),
                 onTap: () {
+
                   setState(() {
                     responsesList.removeAt(index);
                   });

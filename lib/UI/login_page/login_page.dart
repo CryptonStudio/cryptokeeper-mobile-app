@@ -1,8 +1,8 @@
 import 'package:ck_login/UI/PIN_code_page/PIN_code_page.dart';
 import 'package:ck_login/constants.dart';
 import 'package:ck_login/validators.dart';
-import 'package:ck_login/widgets/custom_button.dart';
-import 'package:ck_login/widgets/input_form.dart';
+import 'package:ck_login/UI/widgets/custom_button.dart';
+import 'package:ck_login/UI/widgets/input_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
