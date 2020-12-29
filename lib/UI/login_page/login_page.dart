@@ -1,4 +1,4 @@
-import 'package:ck_login/UI/PIN_code_page/PIN_code_page.dart';
+import 'package:ck_login/UI/PIN_code_creation_page/PIN_code_creation_page.dart';
 import 'package:ck_login/constants.dart';
 import 'package:ck_login/validators.dart';
 import 'package:ck_login/UI/widgets/custom_button.dart';
