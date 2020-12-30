@@ -9,5 +9,8 @@ class ISecureStorageService extends ISecureStorage {
 
   Future<void> savePinCode(String pinCode) async {
     await write(_pinCodeKey, pinCode);
+    read(_pinCodeKey).then((value) {
+      print(value);
+    });
   }
 }
