@@ -15,7 +15,6 @@ class PinCodeKeyboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List pin = new List();
     return Container(
       height: MediaQuery.of(context).size.height / 2,
       child: Column(
@@ -75,13 +74,13 @@ class PinCodeKeyboard extends StatelessWidget {
             child: Row(
               children: [
                 Spacer(),
-                number(assetPath: "assets/svg/finger_print.svg"),
+                removeButton(assetPath: "assets/svg/finger_print.svg"),
                 Spacer(),
                 number(
                   number: "0",
                 ),
                 Spacer(),
-                number(
+                removeButton(
                   assetPath: "assets/svg/delete_arrow.svg",
                 ),
                 Spacer(),
@@ -94,27 +93,37 @@ class PinCodeKeyboard extends StatelessWidget {
   }
 
   Widget number({
-    String number,
-    String assetPath,
+    @required String number,
   }) {
     return GestureDetector(
-      onTap: assetPath == null
-          ? onRemoveButtonPressed
-          : () => onCodeButtonPressed(number),
+      onTap: () => onCodeButtonPressed(number),
       child: Container(
         color: Colors.black,
         width: 53,
         height: 53,
         child: Center(
-          child: assetPath == null
-              ? Text(
-                  number,
-                  style: TextStyle(
-                    fontSize: 25,
-                    color: CustomColors.white,
-                  ),
-                )
-              : SvgPicture.asset(assetPath),
+            child: Text(
+          number,
+          style: TextStyle(
+            fontSize: 25,
+            color: CustomColors.white,
+          ),
+        )),
+      ),
+    );
+  }
+
+  Widget removeButton({
+    @required String assetPath,
+  }) {
+    return GestureDetector(
+      onTap: onRemoveButtonPressed,
+      child: Container(
+        color: Colors.black,
+        width: 53,
+        height: 53,
+        child: Center(
+          child: SvgPicture.asset(assetPath),
         ),
       ),
     );
