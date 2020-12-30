@@ -33,6 +33,7 @@ dependencies:
   flutter_slidable: ^0.5.7
   flutter_secure_storage: ^3.3.5
   flutter_bloc: ^6.1.0
+  cubit: ^0.1.0
 
 dev_dependencies:
   flutter_test:

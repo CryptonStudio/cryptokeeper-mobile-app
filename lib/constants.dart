@@ -22,4 +22,5 @@ class LangKeys {
   static const String all = "All";
   static const String accepted = "Accepted";
   static const String declined = "Declined";
+  static const String pincodes_did_not_match = "pincodes_did_not_match";
 }

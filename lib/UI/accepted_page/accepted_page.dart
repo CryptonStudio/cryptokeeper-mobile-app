@@ -6,7 +6,6 @@ class AcceptedPage extends StatefulWidget {
   @override
   _AcceptedPageState createState() => _AcceptedPageState();
 }
-
 class _AcceptedPageState extends State<AcceptedPage> {
   @override
   Widget build(BuildContext context) {

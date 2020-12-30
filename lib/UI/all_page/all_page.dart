@@ -20,6 +20,8 @@ class _AllPageState extends State<AllPage> {
   ];
   SlidableController slidableController;
 
+  final Radius borderRadius = Radius.circular(13);
+
   void slideAnimationChanged(Animation<double> slideAnimation) {
     setState(() {
       _rotationAnimation = slideAnimation;
@@ -60,8 +62,8 @@ class _AllPageState extends State<AllPage> {
                   decoration: BoxDecoration(
                     color: CustomColors.acceptedColor,
                     borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(13),
-                      bottomRight: Radius.circular(13),
+                      topRight: borderRadius,
+                      bottomRight: borderRadius,
                     ),
                   ),
                   alignment: Alignment.center,
@@ -105,8 +107,8 @@ class _AllPageState extends State<AllPage> {
                   decoration: BoxDecoration(
                     color: CustomColors.declinedColor,
                     borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(13),
-                      bottomLeft: Radius.circular(13),
+                      topLeft: borderRadius,
+                      bottomLeft: borderRadius,
                     ),
                   ),
                   alignment: Alignment.center,
