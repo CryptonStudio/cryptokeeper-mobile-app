@@ -10,6 +10,8 @@ class PinCodeCreationState {
   final bool isSuccess;
   final String errorMessage;
 
+  bool get isEquals => listEquals(pinCode, confirmedPinCode);
+
   PinCodeCreationState({
     @required this.pinCode,
     @required this.confirmedPinCode,
