@@ -19,6 +19,7 @@ class _HomepageState extends State<Homepage>
 
   @override
   void initState() {
+
     tabController = TabController(length: 3, vsync: this);
     _scrollViewController = ScrollController(initialScrollOffset: 0.0);
     super.initState();
@@ -81,7 +82,7 @@ class _HomepageState extends State<Homepage>
                           duration: Duration(milliseconds: 300),
                           expand: true,
                           context: context,
-                          builder: (context) => myBar(context),
+                          builder: (context) => filtrationExpanded(context),
                         ),
                         child: Align(
                           alignment: Alignment.bottomRight,
@@ -138,203 +139,115 @@ class _HomepageState extends State<Homepage>
       ),
     );
   }
-}
 
-Widget myBar(BuildContext context) {
-  return Scaffold(
-    body: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 13, bottom: 12),
-            child: Container(
-              alignment: Alignment.center,
+  Widget filtrationExpanded(BuildContext context) {
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 13, bottom: 12),
               child: Container(
-                width: 53,
-                height: 4,
-                decoration: BoxDecoration(
-                  color: Color(0xFF62626D),
-                  borderRadius: BorderRadius.circular(13),
+                alignment: Alignment.center,
+                child: Container(
+                  width: 53,
+                  height: 4,
+                  decoration: BoxDecoration(
+                    color: Color(0xFF62626D),
+                    borderRadius: BorderRadius.circular(13),
+                  ),
                 ),
               ),
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Spacer(),
-              Text(
-                "Filtration",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: CustomColors.white,
-                  fontSize: 17,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Spacer(),
+                Text(
+                  "Filtration",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: CustomColors.white,
+                    fontSize: 17,
+                  ),
                 ),
-              ),
-              Expanded(
-                child: Row(
-                  children: [
-                    Spacer(),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: Container(
-                        color: CustomColors.scaffoldBackgroundColor,
-                        height: 47,
-                        width: 50,
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 12),
-                          child: Text(
-                            "Close",
-                            textAlign: TextAlign.right,
-                            style: TextStyle(
-                              color: CustomColors.buttonBackGroundColor,
-                              fontSize: 17,
+                Expanded(
+                  child: Row(
+                    children: [
+                      Spacer(),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Container(
+                          color: CustomColors.scaffoldBackgroundColor,
+                          height: 47,
+                          width: 50,
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 12),
+                            child: Text(
+                              "Close",
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                color: CustomColors.buttonBackGroundColor,
+                                fontSize: 17,
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 15),
-            child: Text(
-              "Choose merchant",
-              style: TextStyle(color: CustomColors.white, fontSize: 17),
-            ),
-          ),
-          InputForm.filled(
-            hintText: "From price",
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 22.5, bottom: 13),
-            child: Divider(
-              height: 1,
-              thickness: 1,
-              color: CustomColors.inputBackGroundColor,
-            ),
-          ),
-          Text(
-            "Some setting",
-            style: TextStyle(color: CustomColors.white, fontSize: 17),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 15),
-            child: Row(
-              children: [
-                Expanded(
-                  child: InputForm.filled(
-                    hintText: "From price",
-                  ),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Expanded(
-                  child: InputForm.filled(
-                    hintText: "To price",
+                    ],
                   ),
                 ),
               ],
             ),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 15),
+              child: Text(
+                "Choose merchant",
+                style: TextStyle(color: CustomColors.white, fontSize: 17),
+              ),
+            ),
+            InputForm.filled(
+              hintText: "From price",
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 22.5, bottom: 13),
+              child: Divider(
+                height: 1,
+                thickness: 1,
+                color: CustomColors.inputBackGroundColor,
+              ),
+            ),
+            Text(
+              "Some setting",
+              style: TextStyle(color: CustomColors.white, fontSize: 17),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 15),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: InputForm.filled(
+                      hintText: "From price",
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Expanded(
+                    child: InputForm.filled(
+                      hintText: "To price",
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
-    ),
-  );
+    );
+  }
 }
-
-// BottomNavigationBar(
-//   onTap: onTabTapped,
-//   items: [
-//     BottomNavigationBarItem(
-//       title: Text('Profile'),
-//       icon: Icon(
-//         Icons.home,
-//       ),
-//     ),
-//     BottomNavigationBarItem(
-//       title: Text('Profile'),
-//       icon: Icon(
-//         Icons.home,
-//       ),
-//     ),
-//     BottomNavigationBarItem(
-//       title: Text('Profile'),
-//       icon: Icon(
-//         Icons.home,
-//       ),
-//     ),
-//   ],
-// ),
-
-// body: DefaultTabController(
-// length: 3,
-// child: Column(
-// children: [
-// Padding(
-// padding: const EdgeInsets.only(top: 40, right: 20, left: 20),
-// child: Row(
-// crossAxisAlignment: CrossAxisAlignment.start,
-// mainAxisAlignment: MainAxisAlignment.start,
-// children: [
-// Padding(
-// padding: const EdgeInsets.only(top: 30),
-// child: Text(
-// "Home",
-// style: TextStyle(
-// color: CustomColors.white,
-// fontSize: 34,
-// ),
-// ),
-// ),
-// Expanded(
-// child: Align(
-// alignment: Alignment.topRight,
-// child: SvgPicture.asset("assets/svg/setting.svg"),
-// ),
-// ),
-// ],
-// ),
-// ),
-// Padding(
-// padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-// child: Container(
-// decoration: BoxDecoration(
-// color: Color(0xFF385AD3),
-// borderRadius: BorderRadius.circular(8),
-// ),
-// child: TabBar(
-// indicatorSize: TabBarIndicatorSize.tab,
-// indicator: BoxDecoration(
-// color: CustomColors.scaffoldBackgroundColor,
-// borderRadius: BorderRadius.circular(8),
-// border: Border.all(
-// color: Color(0xFF385AD3),
-// width: 3,
-// ),
-// ),
-// tabs: tabs,
-// ),
-// ),
-// ),
-// Expanded(
-// child: TabBarView(
-// physics: NeverScrollableScrollPhysics(),
-// children: [
-// AllPage(),
-// AcceptedPage(),
-// DecLinedPage(),
-// ],
-// ),
-// ),
-//
-// ],
-// ),
